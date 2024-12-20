@@ -19,9 +19,9 @@ The two key findings were then combined to create a final contrastive learning f
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Training](#training)
-  - [Evaluation](#evaluation)
-- [Configuration](#configuration)
+  - [Training and Evaluation](#training_and_evaluation)
+  - [Dataset] (#dataset)
+  - [Pretrained Models] (#pretrained_models)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
@@ -73,15 +73,11 @@ cd SimCLR-with-Tensorflow2
 
 The SimCLR.ipynb notebook is the main interface of this project.
 
----
-
-## Dataset
+### Dataset
 The dataset used for pretraining the models can be found here https://www.image-net.org/challenges/LSVRC/2012/ 
 Specifically, I used a part of the validation set.
 
----
-
-## Pretrained Models
+### Pretrained Models
 Pretrained models can be found here:
 https://drive.google.com/drive/folders/1Ya7itCLNu4UeWx-ln83tc1NOOqR29RoF?usp=sharing
 
