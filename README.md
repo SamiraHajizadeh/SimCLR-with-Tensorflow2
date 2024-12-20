@@ -1,14 +1,3 @@
-## Running
-In order to run the experiments you only have to use the code in the main jupyter notebook.
-
-## Pretrained Models
-Pretrained models can be found here:
-https://drive.google.com/drive/folders/1Ya7itCLNu4UeWx-ln83tc1NOOqR29RoF?usp=sharing
-
-## Detailed instructions how to submit this project:
-1. The assignment will be distributed as a Github classroom assignment - as a special repository accessed through a link
-2. A student's copy of the assignment gets created automatically with a special name
-
 # SimCLR with TensorFlow 2
 
 This repository implements **SimCLR**, a self-supervised learning framework for visual representations, using TensorFlow 2. SimCLR is designed to learn robust feature representations from unlabeled images through contrastive learning. This implementation is inspired by the paper:
@@ -80,6 +69,10 @@ cd SimCLR-with-Tensorflow2
 ---
 
 ## Usage
+
+## Pretrained Models
+Pretrained models can be found here:
+https://drive.google.com/drive/folders/1Ya7itCLNu4UeWx-ln83tc1NOOqR29RoF?usp=sharing
 
 ### Training
 
