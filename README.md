@@ -14,7 +14,145 @@ https://drive.google.com/drive/folders/1Ya7itCLNu4UeWx-ln83tc1NOOqR29RoF?usp=sha
 1. The assignment will be distributed as a Github classroom assignment - as a special repository accessed through a link
 2. A student's copy of the assignment gets created automatically with a special name
 
-TODO: Create a directory/file tree
+# SimCLR with TensorFlow 2
+
+This repository implements **SimCLR**, a self-supervised learning framework for visual representations, using TensorFlow 2. SimCLR is designed to learn robust feature representations from unlabeled images through contrastive learning. This implementation is inspired by the paper:
+
+> [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709) by Ting Chen, Simon Kornblith, Mohammad Norouzi, Geoffrey Hinton
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Training](#training)
+  - [Evaluation](#evaluation)
+- [Configuration](#configuration)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Features
+
+- Self-supervised pretraining using contrastive loss.
+- Support for data augmentation strategies (color jittering, cropping, flipping, etc.).
+- Modular design for model definition, training, and evaluation.
+- Transfer learning capabilities for downstream tasks.
+- TensorFlow 2 compatible.
+
+---
+
+## Requirements
+
+To run this project, ensure you have the following installed:
+
+- Python >= 3.8
+- TensorFlow >= 2.10
+- NumPy
+- Matplotlib
+- tqdm
+- OpenCV (optional, for advanced augmentations)
+
+Install dependencies using:
+
+```bash
+pip install -r requirements.txt
 ```
 
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SamiraHajizadeh/SimCLR-with-Tensorflow2.git
+cd SimCLR-with-Tensorflow2
 ```
+
+---
+
+## Usage
+
+### Training
+
+To train the SimCLR model on a dataset, use the following command:
+
+```bash
+python train.py --data_dir /path/to/dataset --batch_size 128 --epochs 100
+```
+
+Available training arguments:
+
+- `--data_dir`: Path to the dataset directory (default: `./data`).
+- `--batch_size`: Batch size for training (default: `128`).
+- `--epochs`: Number of training epochs (default: `100`).
+- `--temperature`: Temperature parameter for contrastive loss (default: `0.5`).
+- `--learning_rate`: Initial learning rate (default: `0.001`).
+
+### Evaluation
+
+To evaluate the quality of representations on a downstream task:
+
+```bash
+python evaluate.py --model_path /path/to/saved_model --data_dir /path/to/eval_dataset
+```
+
+---
+
+## Configuration
+
+The training and evaluation settings can be customized through `config.yaml`. Key configurations include:
+
+- Augmentation settings (e.g., cropping, flipping, color jittering).
+- Model architecture and hyperparameters.
+- Paths for saving models and logs.
+
+Example `config.yaml` snippet:
+
+```yaml
+batch_size: 128
+epochs: 100
+temperature: 0.5
+learning_rate: 0.001
+augmentations:
+  crop: True
+  flip: True
+  color_jitter: True
+```
+
+---
+
+## Project Structure
+
+```plaintext
+SimCLR-with-Tensorflow2/
+├── data/                  # Dataset directory (not included in repo)
+├── models/                # Pretrained and saved models
+├── src/                   # Source code for training and evaluation
+│   ├── data_loader.py     # Data loading and augmentation scripts
+│   ├── model.py           # SimCLR model definition
+│   ├── train.py           # Training script
+│   ├── evaluate.py        # Evaluation script
+│   ├── utils.py           # Utility functions
+├── config.yaml            # Configuration file
+├── requirements.txt       # Python dependencies
+└── README.md              # Project documentation
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to submit issues or pull requests to improve this project.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
