@@ -46,7 +46,6 @@ To run this project, ensure you have the following installed:
 - TensorFlow >= 2.10
 - NumPy
 - Matplotlib
-- tqdm
 - OpenCV (optional, for advanced augmentations)
 
 Install dependencies using:
@@ -92,15 +91,15 @@ https://drive.google.com/drive/folders/1Ya7itCLNu4UeWx-ln83tc1NOOqR29RoF?usp=sha
 
 ```plaintext
 SimCLR-with-Tensorflow2/
-├── data/
-├── models/                # Pretrained and saved models
-├── src/                   # Source code for training and evaluation
-│   ├── data_loader.py     # Data loading and augmentation scripts
-│   ├── model.py           # SimCLR model definition
-│   ├── train.py           # Training script
-│   ├── evaluate.py        # Evaluation script
-│   ├── utils.py           # Utility functions
-├── config.yaml            # Configuration file
+├── figures/
+├── training/
+│   ├── learning_rate_schedule.py
+│   ├── train.py
+├── utils/
+│   ├── NT_Xent.py
+│   ├── data_augmentation.py
+│   ├── evaluation_metrics.py
+│   ├── test.py
 ├── requirements.txt       # Python dependencies
 └── README.md              # Project documentation
 ```
