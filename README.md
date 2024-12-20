@@ -70,56 +70,21 @@ cd SimCLR-with-Tensorflow2
 
 ## Usage
 
-## Pretrained Models
-Pretrained models can be found here:
-https://drive.google.com/drive/folders/1Ya7itCLNu4UeWx-ln83tc1NOOqR29RoF?usp=sharing
+### Training and Evaluation
 
-### Training
-
-To train the SimCLR model on a dataset, use the following command:
-
-```bash
-python train.py --data_dir /path/to/dataset --batch_size 128 --epochs 100
-```
-
-Available training arguments:
-
-- `--data_dir`: Path to the dataset directory (default: `./data`).
-- `--batch_size`: Batch size for training (default: `128`).
-- `--epochs`: Number of training epochs (default: `100`).
-- `--temperature`: Temperature parameter for contrastive loss (default: `0.5`).
-- `--learning_rate`: Initial learning rate (default: `0.001`).
-
-### Evaluation
-
-To evaluate the quality of representations on a downstream task:
-
-```bash
-python evaluate.py --model_path /path/to/saved_model --data_dir /path/to/eval_dataset
-```
+The SimCLR.ipynb notebook is the main interface of this project.
 
 ---
 
-## Configuration
+## Dataset
+The dataset used for pretraining the models can be found here https://www.image-net.org/challenges/LSVRC/2012/ 
+Specifically, I used a part of the validation set.
 
-The training and evaluation settings can be customized through `config.yaml`. Key configurations include:
+---
 
-- Augmentation settings (e.g., cropping, flipping, color jittering).
-- Model architecture and hyperparameters.
-- Paths for saving models and logs.
-
-Example `config.yaml` snippet:
-
-```yaml
-batch_size: 128
-epochs: 100
-temperature: 0.5
-learning_rate: 0.001
-augmentations:
-  crop: True
-  flip: True
-  color_jitter: True
-```
+## Pretrained Models
+Pretrained models can be found here:
+https://drive.google.com/drive/folders/1Ya7itCLNu4UeWx-ln83tc1NOOqR29RoF?usp=sharing
 
 ---
 
@@ -127,7 +92,7 @@ augmentations:
 
 ```plaintext
 SimCLR-with-Tensorflow2/
-├── data/                  # Dataset directory (not included in repo)
+├── data/
 ├── models/                # Pretrained and saved models
 ├── src/                   # Source code for training and evaluation
 │   ├── data_loader.py     # Data loading and augmentation scripts
